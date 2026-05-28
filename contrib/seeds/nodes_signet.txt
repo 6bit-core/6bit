@@ -1,0 +1,123 @@
+[fc10:efa7:ca6:1548:f8c:6bb9:1cc4:63ae]:56666
+[fc1f:22c3:95dc:a3af:4a93:8251:beb9:1858]:56666
+3cxteqanevzjd5iufktxxh3l5abj6fs6udqg3bomphzofqjl4aqa.b32.i2p:0
+nmmoytmmcwq4aclmtrxk3askrv7mgy6l27uw67ozvyolwca2dr6a.b32.i2p:0
+qn7uwi6nx6tuakxvzhjnjeuxwpcq6wcv4diecrv63ugain2tdopa.b32.i2p:0
+regl2o33xgkhnuu5ywr7tw72dio46j6tylz7zpdl6pfaqsktboea.b32.i2p:0
+1.0.0.1:56666 # AS16509
+1.0.0.142:56666 # AS396982
+1.0.0.118:56666 # AS15169
+1.0.0.124:56666 # AS174
+1.0.0.5:56666 # AS400810
+1.0.0.135:56666 # AS16276
+1.0.0.170:56666 # AS16509
+1.0.0.122:56666 # AS1403
+1.0.0.168:56666 # AS7459
+1.0.0.236:56666 # AS51167
+1.0.0.14:56666 # AS16276
+1.0.0.117:56666 # AS31034
+1.0.0.150:56666 # AS132203
+1.0.0.131:56666 # AS20454
+1.0.0.74:56666 # AS1299
+1.0.0.250:56666 # AS20857
+1.0.0.157:56666 # AS31898
+1.0.0.206:56666 # AS31898
+1.0.0.169:56666 # AS24940
+1.0.0.68:56666 # AS14061
+1.0.0.229:56666 # AS214996
+1.0.0.201:56666 # AS7684
+1.0.0.213:56666 # AS14061
+1.0.0.6:56666 # AS174
+1.0.0.233:56666 # AS63949
+1.0.0.74:56666 # AS49981
+1.0.0.42:56666 # AS203394
+1.0.0.180:56666 # AS197922
+1.0.0.64:56666 # AS51167
+1.0.0.54:56666 # AS24940
+1.0.0.162:56666 # AS197540
+1.0.0.86:56666 # AS7871
+1.0.0.71:56666 # AS397444
+1.0.0.48:56666 # AS53667
+1.0.0.68:56666 # AS2860
+[2001:41d0:304:400::d0a]:56666 # AS16276
+[2001:41d0:347:e00::]:56666 # AS16276
+[2001:41d0:403:4ecb::]:56666 # AS16276
+[2001:41d0:800:330f::]:56666 # AS16276
+[2001:5a8:4164:7a00::1f8]:56666 # AS1299
+[2400:8907::f03c:92ff:fe6f:ee2b]:56666 # AS63949
+[2401:2500:102:3007:153:126:143:201]:56666 # AS7684
+[2604:a880:4:1d0::352:6000]:56666 # AS14061
+[2604:a880:800:14::3880:3000]:56666 # AS14061
+[2620:6e:a0a0:1::71]:56666 # AS397444
+[2a01:4f8:13a:c56::2]:56666 # AS24940
+[2a01:4f8:190:72a4::2]:56666 # AS24940
+[2a01:4f8:2190:29b0::2]:56666 # AS24940
+[2a01:4f8:2220:1a70::2]:56666 # AS24940
+[2a01:4f8:231:3d6f::2]:56666 # AS24940
+[2a01:4f8:242:4246::2]:56666 # AS24940
+[2a01:4f8:c17:bff8::1]:56666 # AS24940
+[2a01:4f9:1a:aa95::2]:56666 # AS24940
+[2a01:4f9:3a:2496::2]:56666 # AS24940
+[2a01:4f9:4b:470d::2]:56666 # AS24940
+[2a01:7c8:d008:e9::3]:56666 # AS20857
+[2a02:29e0:1:420::64]:56666 # AS49367
+[2a0c:b641:6f1:6::2]:56666 # AS214379
+2ycyu2aba3xsqjr35beqporp5f64ntqs2sau2amn5ztq4j5q76amhqyd.onion:56666
+3xvum5nnvcchvfxwlbc2it7nbfxhml6ovt7xehjw2potempk2om4eoqd.onion:56666
+43nk7wpojel47fmc2il4sunwkpj4d2sh5rpeconlymplvuf7mwvnidqd.onion:56666
+4lrtpspzigxrso22dy4ux23ad5gxrs7z562azclspfhil5w55jxpnhyd.onion:56666
+4n2rlrrnxcpnfrft4ivlsvsjiahk5ffxizcyfr5amjcqfwt4biitjpid.onion:56666
+6fy45vxzgc6siecr7en4k6oft4k4ix47jvkxqyzopalzwyphqc3hv2ad.onion:56666
+75ucqkuqndevjaqjnyfgyhzdfgcnknr6ki3skvkqjlxnrcfqc6wxqbad.onion:56666
+a7mvea5xgpknsqaifyvfstdn2utjvph564i6ti3nbdr2cksby5jhykid.onion:56666
+b3sbqhjstq34ae7lsrw3syhxcjdu2ssuf3f3kvbnyrvbp7cvuuopmbqd.onion:56666
+b6lyxzxr2xmzmdy7543renqfe2btqopjptilw4wxgzoyftazzspwq5id.onion:56666
+b6x3qw2ibiycnj67jww3sjvkokq4ssxdvj7vetq7s64fhet75zat5cad.onion:56666
+ba3rwqombmuji3wxpmydrk7vcxfpq7pnn5bfw74wvvqyo6rrhwqrt6id.onion:56666
+bxctkglm5qyt2ubhu4je35irvvcnjrjydl2p6ywfelo7fnjw2exoehyd.onion:56666
+ckbugjazj2iotosxah7odbxfozxivuk6zu5npf3iwfphvoh5brdjfqad.onion:56666
+d27tvdmi6wjjlffjyhm5mogwsw3433jxkaiwhti32eagvljdzseilqqd.onion:56666
+dpzlvj7kmbifhbttfe7vwl6fgpy5os62iiznel6eocsaarssudtdzoyd.onion:56666
+e6xhvtrt2ppjfxckbinu7a4jxmy7usjnvjx6st2cipmvlnnhxg7krbid.onion:56666
+ecx2z3x4nwbzjh6dh6vyccljkhnxya2o2o2tz3pzvetxfjjmujxhctid.onion:56666
+ejgeimjypsfuijpxzy5xpwmmjmkr4izwze6od5pw74csjglflib6nsid.onion:56666
+fo7cekwzd3ibyoxuo53mfqoxffgfaupg5ydxbl3rofvwxtzbvgy3ciqd.onion:56666
+fqyzt7wikf6g6yxu6i2yar3lkqxbf6fu3c3pjnbg2oibt57usfmq42id.onion:56666
+gd4gyokpcnnqqodklhltjimcrhhmqj7otwlzrolw76aag4leqsyolxad.onion:56666
+hm7i5k5o37ffzytt5eym2muzlj7r3xw6sisafnb6s2lhvraqbma2azqd.onion:56666
+hztyx76iaz4h3emavmzbuizqfg3q37ehfwr2k3afadtcmcepjsxhmeqd.onion:56666
+immdwqfyz2hhcmxmyypstz7syq2cygaklr43mqjmqefnmtcyuspwkbad.onion:56666
+jahtu4veqnvjldtbyxjiibdrltqiiighauai7hmvknwxhptsb4xat4qd.onion:56666
+jgn75dy52o2lt5wr5qkf4z2cg7gupz4jc4z5az53srhxxyvkipqqqpid.onion:56666
+jw6d7rlkcz252f6wv6cirzzrknzuu7xwxnzirab4c5x7wfzl2uzvezad.onion:56666
+k4d6h4eyeqjn35b3x46f4s3g3eykn4bms52paxuxenkre6nmhfvy6bqd.onion:56666
+k6z3aojwz2jngg5bumtf7qphcwvvve3idqol27s7slg2p3tp3yrbqsqd.onion:56666
+kklfzzodnlinc3toltn7dlft4vzjf2ckmdw2n3dn4lx3pzw5di2womyd.onion:56666
+lbfzxmkog5ntvcmo7ncsp7ye62onxprf3a42hdzxkjw4inulizd4ccid.onion:56666
+litqgemqmpesu6gi2ctd4ubrpxdn4mcm2t6p7xhkfxnkk7lzpdx75vyd.onion:56666
+lkgnafoa5nfd34pzyxpz5gnmpwkbdk5a5h6h7hk3rs53soh6nkb3snqd.onion:56666
+lwiqghlmljzlarwn4gwdrvskd3nibtw63o5ok7ugx4nwuvh7b422ifad.onion:56666
+lxied2447sbmnoi64xbrdtcekdfyneoo3xb3m6vscj452orvdi2cjsqd.onion:56666
+n6tf5dfz25i4pprczevdkyo5bkpgfa3xigenn6skpjqqynbxpxzilfid.onion:56666
+nhpn5jnzl64wuhke22bl3avgm7liycl2h2fqh5a5tjtejez6upze4tid.onion:56666
+o2fumu43ugk6xayo2nvadn7ohqlxharakt4flqh3hjgxdbwzrwignmyd.onion:56666
+oowqbk36g76cs37sk7myfoq62e7ly42etcfugol3p7haw6ewyn5qhiqd.onion:56666
+pkpiv6cqqba3mb5cpccdvz5v5p3u5acrjv2zj2u4auzznceqculjrkid.onion:56666
+pmjm644pzkp2khwixyis2c7mnfbte33bnmwxdx5lk6t6owvtmapdbhqd.onion:56666
+q3z526imdoo2pdujkfp5vslshni2niewlbxfokejfkddkezxutagezyd.onion:56666
+qbjhndk6zjpzxfetanqjud3u6kiuspnjfapinw2r5cou6o5ae5mxdzid.onion:56666
+r4y5pqyvdzq3bzg2fqu46ql4a32fadkftwejtxzckeyohd7wvqnnwtqd.onion:56666
+sver4nn4i5i7klvvayqopjbk5eyu7lcrrhcchxmrouom224hrnarl6qd.onion:56666
+tev7cdwka3av6ektydsjfpofmcam3r6qcw7sxbpkohckjvihtzp7hgyd.onion:56666
+tgqpfwoxjidlwd5rgpj5zfuhctxrevsfueqndih4vx5hgxpmyg34jqyd.onion:56666
+tsq7clffbfe636zfszymheqgy6tyzbsjogad2qet7qeijua5c53ye6ad.onion:56666
+w7d4rwjt5igozi5v7z2m3in2wm3zsf2lhsizqqohkyrokbbie5equoad.onion:56666
+wevmujl2p6mckcwaxnmtusweros7bu3bxf2g3lzutnfdkjl5gwbu36yd.onion:56666
+ww4jycomjwnf7jtrrrngeahokqkcl32iufmjzvvk272svieavabjyiqd.onion:56666
+xbulvl2bb4wvnlafmq3j3fzrjhsmnfz7ubyvl6yy3syeded4tqiubkad.onion:56666
+xm4kxluodmeolmaugmaxnexnefrg3vsxnqo2ezu7rqmdct7i7xevcxad.onion:56666
+xtmr2yizi5zibbapqdqedeu5whn2oy5cpy2zz7ea5adpcdo2nz4qyzad.onion:56666
+yjhagyj65xcxu6b5yktu6ntkwsyd5rhjlrsb7sexq5lzchatdqmoqnqd.onion:56666
+ykeyrl6bidrfexbjicdzgnx6lh5efwhe4sj5inpgiufwa5cdhjpgugid.onion:56666
+ypi6qgnmabcqlmjfkcnqzpjdjihwmebxkd32tjwt6mrhgm2strfml6ad.onion:56666
+zgkvv542e4ewviremw3qp4bi52f2sxt4g4mrjrbwonbnfb5oujd44lid.onion:56666

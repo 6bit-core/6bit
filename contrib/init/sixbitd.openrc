@@ -1,0 +1,83 @@
+#!/sbin/openrc-run
+
+# backward compatibility for existing gentoo layout
+if [ -d "/var/lib/sixbit/.sixbit" ]; then
+	SIXBITD_DEFAULT_DATADIR="/var/lib/sixbit/.sixbit"
+else
+	SIXBITD_DEFAULT_DATADIR="/var/lib/sixbitd"
+fi
+
+SIXBITD_CONFIGFILE=${SIXBITD_CONFIGFILE:-/etc/sixbit/sixbit.conf}
+SIXBITD_PIDDIR=${SIXBITD_PIDDIR:-/var/run/sixbitd}
+SIXBITD_PIDFILE=${SIXBITD_PIDFILE:-${SIXBITD_PIDDIR}/sixbitd.pid}
+SIXBITD_DATADIR=${SIXBITD_DATADIR:-${SIXBITD_DEFAULT_DATADIR}}
+SIXBITD_USER=${SIXBITD_USER:-${SIXBIT_USER:-sixbit}}
+SIXBITD_GROUP=${SIXBITD_GROUP:-sixbit}
+SIXBITD_BIN=${SIXBITD_BIN:-/usr/bin/sixbitd}
+SIXBITD_NICE=${SIXBITD_NICE:-${NICELEVEL:-0}}
+SIXBITD_OPTS="${SIXBITD_OPTS:-${SIXBIT_OPTS}}"
+
+name="Sixbit Core Daemon"
+description="sixbit cryptocurrency P2P network daemon"
+
+command="${SIXBITD_BIN}"
+command_args="-pid=\"${SIXBITD_PIDFILE}\" \
+	-conf=\"${SIXBITD_CONFIGFILE}\" \
+	-datadir=\"${SIXBITD_DATADIR}\" \
+	-daemon \
+	${SIXBITD_OPTS}"
+
+required_files="${SIXBITD_CONFIGFILE}"
+start_stop_daemon_args="-u ${SIXBITD_USER} \
+	-N ${SIXBITD_NICE} -w 2000"
+pidfile="${SIXBITD_PIDFILE}"
+
+retry="${SIXBITD_SIGTERM_TIMEOUT:-600}"
+
+depend() {
+	need localmount net
+}
+
+start_pre() {
+	checkpath \
+	-d \
+	--mode 0750 \
+	--owner "${SIXBITD_USER}:${SIXBITD_GROUP}" \
+	"${SIXBITD_DATADIR}"
+
+	checkpath \
+	-d \
+	--mode 0755 \
+	--owner "${SIXBITD_USER}:${SIXBITD_GROUP}" \
+	"${SIXBITD_PIDDIR}"
+
+	checkpath -f \
+	-o "${SIXBITD_USER}:${SIXBITD_GROUP}" \
+	-m 0660 \
+	"${SIXBITD_CONFIGFILE}"
+
+	checkconfig || return 1
+}
+
+checkconfig() {
+	if grep -qs '^rpcuser=' "${SIXBITD_CONFIGFILE}" && \
+		! grep -qs '^rpcpassword=' "${SIXBITD_CONFIGFILE}"; then
+		eerror ""
+		eerror "ERROR: You must set a secure rpcpassword to run sixbitd."
+		eerror "The setting must appear in ${SIXBITD_CONFIGFILE}"
+		eerror ""
+		eerror "This password is security critical to securing wallets"
+		eerror "and must not be the same as the rpcuser setting."
+		eerror "You can generate a suitable random password using the following"
+		eerror "command from the shell:"
+		eerror ""
+		eerror "bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'"
+		eerror ""
+		eerror "It is recommended that you also set alertnotify so you are"
+		eerror "notified of problems:"
+		eerror ""
+		eerror "ie: alertnotify=echo %%s | mail -s \"sixbit Alert\" admin@foo.com"
+		eerror ""
+		return 1
+	fi
+}

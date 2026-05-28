@@ -1,0 +1,77 @@
+.TH sixbit-UTIL "1" "April 2026" "sixbit-util v1.0.0" "User Commands"
+.SH NAME
+sixbit-util \- utility commands for Sixbit Core
+.SH SYNOPSIS
+.B sixbit-util
+[\fIoptions\fR] [\fIcommand\fR]
+.br
+.B sixbit-util
+[\fIoptions\fR] \fBgrind\fR \fI<hex-block-header>\fR
+.SH DESCRIPTION
+Sixbit Core sixbit-util utility version v1.0.0
+.PP
+The
+.B sixbit-util
+tool provides utility functionality related to sixbit that does not require access to a running node.
+Available commands are listed below.
+.SH OPTIONS
+.HP
+\fB-help\fR
+.IP
+Print this help message and exit (also \fB-h\fR or \fB-?\fR).
+.HP
+\fB-version\fR
+.IP
+Print version and exit.
+
+.PP
+Chain selection options:
+.HP
+\fB-chain=\fR<chain>
+.IP
+Use the chain <chain> (default: main). Allowed values: main, test, testnet4, signet, regtest.
+.HP
+\fB-signet\fR
+.IP
+Use the signet chain. Equivalent to \fB-chain=signet\fR.
+.HP
+\fB-signetchallenge\fR
+.IP
+Blocks must satisfy the given script to be considered valid (only for signet networks).
+.HP
+\fB-signetseednode\fR
+.IP
+Specify a seed node for the signet network in hostname[:port] format. May be used multiple times.
+.HP
+\fB-testnet\fR
+.IP
+Use the testnet3 chain. Equivalent to \fB-chain=test\fR. Support for testnet3 is deprecated and will be removed in a future release. Consider moving to testnet4.
+.HP
+\fB-testnet4\fR
+.IP
+Use the testnet4 chain. Equivalent to \fB-chain=testnet4\fR.
+
+.PP
+Commands:
+.IP
+grind
+.IP
+Perform proof of work on a hex-encoded block header.
+
+.SH COPYRIGHT
+Copyright (C) 2026 The Sixbit Core developers
+.PP
+Please contribute if you find Sixbit Core useful. Visit
+<https://6bit.dev/>
+for further information about the software.
+.PP
+The source code is available from
+<https://github.com/6bit-core/6bit>.
+.PP
+This is experimental software.
+Distributed under the MIT software license; see the accompanying file COPYING
+or
+<https://opensource.org/license/MIT>.
+
+.SH "SEE ALSO"
+sixbitd(1), sixbit-cli(1), sixbit-tx(1), sixbit-wallet(1), sixbit-util(1), sixbit-qt(1)

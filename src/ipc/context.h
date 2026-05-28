@@ -1,0 +1,20 @@
+// Copyright (c) 2019-present The Bitcoin Core developers
+// Copyright (c) 2026-present The Sixbit Core developers
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or https://opensource.org/license/mit/.
+
+#ifndef SIXBIT_IPC_CONTEXT_H
+#define SIXBIT_IPC_CONTEXT_H
+
+namespace ipc {
+//! Context struct used to give IPC protocol implementations or implementation
+//! hooks access to application state, in case they need to run extra code that
+//! isn't needed within a single process, like code copying global state from an
+//! existing process to a new process when it's initialized, or code dealing
+//! with shared objects that are created or destroyed remotely.
+struct Context
+{
+};
+} // namespace ipc
+
+#endif // SIXBIT_IPC_CONTEXT_H

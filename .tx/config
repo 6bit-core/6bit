@@ -1,0 +1,7 @@
+[main]
+host = https://www.transifex.com
+
+[o:sixbit:p:sixbit:r:qt-translation-030x]
+file_filter = src/qt/locale/sixbit<lang>.xlf
+source_file = src/qt/locale/sixbit_en.xlf
+source_lang = en

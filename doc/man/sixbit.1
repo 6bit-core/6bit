@@ -1,0 +1,88 @@
+.TH sixbit "1" "April 2026" "sixbit v1.0.0" "User Commands"
+
+.SH NAME
+sixbit \- unified command-line interface for Sixbit Core
+
+.SH SYNOPSIS
+.B sixbit
+[\fIoptions\fR] \fIcommand\fR [args...]
+
+.SH OPTIONS
+.TP
+\fB\-m\fR, \fB\-\-multiprocess\fR
+Run multiprocess mode using sixbit-node and sixbit-gui.
+
+.TP
+\fB\-M\fR, \fB\-\-monolithic\fR
+Run monolithic mode using sixbitd and sixbit-qt (default).
+
+.TP
+\fB\-v\fR, \fB\-\-version\fR
+Show version information.
+
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Show full help message.
+
+.SS "Commands:"
+.TP
+gui [ARGS]
+Start GUI (equivalent to 'sixbit-qt' or 'sixbit-gui').
+
+.TP
+node [ARGS]
+Start node (equivalent to 'sixbitd' or 'sixbit-node').
+
+.TP
+rpc [ARGS]
+Call RPC method (equivalent to 'sixbit-cli -named').
+
+.TP
+wallet [ARGS]
+Call wallet command (equivalent to 'sixbit-wallet').
+
+.TP
+tx [ARGS]
+Manipulate hex-encoded transactions (equivalent to 'sixbit-tx').
+
+.TP
+help
+Show full help message.
+
+.SS "Additional less commonly used commands:"
+.TP
+bench [ARGS]
+Run benchmark tool (equivalent to 'bench_sixbit').
+
+.TP
+chainstate [ARGS]
+Run kernel chainstate utility (equivalent to 'sixbit-chainstate').
+
+.TP
+test [ARGS]
+Run unit tests (equivalent to 'test_sixbit').
+
+.TP
+test-gui [ARGS]
+Run GUI unit tests (equivalent to 'test_sixbit-qt').
+
+.SH COPYRIGHT
+Copyright (C) 2009-2026 The Sixbit Core developers
+
+Please contribute if you find Sixbit Core useful.
+Visit <https://6bit.dev/> for more information.
+
+Source code:
+<https://github.com/6bit-core/6bit>
+
+This is experimental software.
+Distributed under the MIT software license. See COPYING or
+<https://opensource.org/license/MIT>.
+
+.SH "SEE ALSO"
+.BR sixbitd (1),
+.BR sixbit-cli (1),
+.BR sixbit-tx (1),
+.BR sixbit-wallet (1),
+.BR sixbit-qt (1),
+.BR sixbit-util (1)

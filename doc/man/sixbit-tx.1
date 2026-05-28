@@ -1,0 +1,157 @@
+.TH sixbit-TX "1" "April 2026" "sixbit-tx v1.0.0" "User Commands"
+.SH NAME
+sixbit-tx \- create and modify raw sixbit transactions
+.SH SYNOPSIS
+.B sixbit-tx
+[\fIoptions\fR] \fI<hex-tx>\fR [\fIcommands\fR]
+.br
+.B sixbit-tx
+[\fIoptions\fR] \fB-create\fR [\fIcommands\fR]
+.SH DESCRIPTION
+Sixbit Core sixbit-tx utility version v1.0.0
+.PP
+The
+.B sixbit-tx
+tool is used for creating and modifying raw sixbit transactions.
+.PP
+It can be used with
+.B "<hex-tx> [commands]"
+to update a hex-encoded sixbit transaction, or with
+.B "-create [commands]"
+to create a new hex-encoded sixbit transaction.
+.SH OPTIONS
+.HP
+\fB-create\fR
+.IP
+Create a new, empty transaction.
+.HP
+\fB-help\fR
+.IP
+Print this help message and exit (also \fB-h\fR or \fB-?\fR).
+.HP
+\fB-json\fR
+.IP
+Select JSON output.
+.HP
+\fB-txid\fR
+.IP
+Output only the hex-encoded transaction ID of the resulting transaction.
+.HP
+\fB-version\fR
+.IP
+Print version and exit.
+
+.PP
+Chain selection options:
+.HP
+\fB-chain=\fR<chain>
+.IP
+Use the chain <chain> (default: main). Allowed values: main, test, testnet4, signet, regtest.
+.HP
+\fB-signet\fR
+.IP
+Use the signet chain. Equivalent to \fB-chain=signet\fR.
+.HP
+\fB-signetchallenge\fR
+.IP
+Blocks must satisfy the given script to be considered valid (only for signet networks).
+.HP
+\fB-signetseednode\fR
+.IP
+Specify a seed node for the signet network in hostname[:port] format. May be used multiple times.
+.HP
+\fB-testnet\fR
+.IP
+Use the testnet3 chain. Equivalent to \fB-chain=test\fR. Support for testnet3 is deprecated and will be removed in a future release. Consider moving to testnet4.
+.HP
+\fB-testnet4\fR
+.IP
+Use the testnet4 chain. Equivalent to \fB-chain=testnet4\fR.
+
+.PP
+Commands:
+.IP
+delin=N
+.IP
+Delete input N from the transaction.
+.IP
+delout=N
+.IP
+Delete output N from the transaction.
+.IP
+in=TXID:VOUT(:SEQUENCE_NUMBER)
+.IP
+Add an input to the transaction.
+.IP
+locktime=N
+.IP
+Set transaction lock time to N.
+.IP
+nversion=N
+.IP
+Set transaction version to N.
+.IP
+outaddr=VALUE:ADDRESS
+.IP
+Add an address-based output to the transaction.
+.IP
+outdata=[VALUE:]DATA
+.IP
+Add a data-based output to the transaction.
+.IP
+outmultisig=VALUE:REQUIRED:PUBKEYS:PUBKEY1:PUBKEY2:....[:FLAGS]
+.IP
+Add a pay-to-n-of-m multisig output to the transaction. n = REQUIRED, m = PUBKEYS.
+Optionally add the "W" flag to produce a pay-to-witness-script-hash output.
+Optionally add the "S" flag to wrap the output in a pay-to-script-hash output.
+.IP
+outpubkey=VALUE:PUBKEY[:FLAGS]
+.IP
+Add a pay-to-pubkey output to the transaction. Optionally add the "W" flag to produce a pay-to-witness-pubkey-hash output. Optionally add the "S" flag to wrap the output in a pay-to-script-hash output.
+.IP
+outscript=VALUE:SCRIPT[:FLAGS]
+.IP
+Add a raw script output to the transaction. Optionally add the "W" flag to produce a pay-to-witness-script-hash output. Optionally add the "S" flag to wrap the output in a pay-to-script-hash output.
+.IP
+replaceable(=N)
+.IP
+Set Replace-By-Fee (RBF) opt-in sequence number for input N. If N is not provided, the command attempts to opt in all available inputs for RBF. If the transaction has no inputs, this option is ignored.
+.IP
+sign=SIGHASH-FLAGS
+.IP
+Add zero or more signatures to the transaction. This command requires JSON registers:
+.B prevtxs
+and
+.B privatekeys .
+See
+.B signrawtransactionwithkey
+documentation for the format of sighash flags and JSON objects.
+
+.PP
+Register commands:
+.IP
+load=NAME:FILENAME
+.IP
+Load JSON file FILENAME into register NAME.
+.IP
+set=NAME:JSON-STRING
+.IP
+Set register NAME to the given JSON string.
+
+.SH COPYRIGHT
+Copyright (C) 2026 The Sixbit Core developers
+.PP
+Please contribute if you find Sixbit Core useful. Visit
+<https://6bit.dev/>
+for further information about the software.
+.PP
+The source code is available from
+<https://github.com/6bit-core/6bit>.
+.PP
+This is experimental software.
+Distributed under the MIT software license; see the accompanying file COPYING
+or
+<https://opensource.org/license/MIT>.
+
+.SH "SEE ALSO"
+sixbitd(1), sixbit-cli(1), sixbit-tx(1), sixbit-wallet(1), sixbit-util(1), sixbit-qt(1)

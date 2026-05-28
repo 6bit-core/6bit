@@ -1,0 +1,53 @@
+// Copyright (c) 2019-present The Bitcoin Core developers
+// Copyright (c) 2011-Copyright (c) 2026-present The Sixbit Core developers
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or https://opensource.org/license/mit/.
+
+#ifndef SIXBIT_QT_TRANSACTIONFILTERPROXY_H
+#define SIXBIT_QT_TRANSACTIONFILTERPROXY_H
+
+#include <consensus/amount.h>
+
+#include <QDateTime>
+#include <QSortFilterProxyModel>
+
+#include <optional>
+
+/** Filter the transaction list according to pre-specified rules. */
+class TransactionFilterProxy : public QSortFilterProxyModel
+{
+    Q_OBJECT
+
+public:
+    explicit TransactionFilterProxy(QObject *parent = nullptr);
+
+    /** Type filter bit field (all types) */
+    static const quint32 ALL_TYPES = 0xFFFFFFFF;
+
+    static quint32 TYPE(int type) { return 1<<type; }
+
+    /** Filter transactions between date range. Use std::nullopt for open range. */
+    void setDateRange(const std::optional<QDateTime>& from, const std::optional<QDateTime>& to);
+    void setSearchString(const QString &);
+    /**
+      @note Type filter takes a bit field created with TYPE() or ALL_TYPES
+     */
+    void setTypeFilter(quint32 modes);
+    void setMinAmount(const CAmount& minimum);
+
+    /** Set whether to show conflicted transactions. */
+    void setShowInactive(bool showInactive);
+
+protected:
+    bool filterAcceptsRow(int source_row, const QModelIndex & source_parent) const override;
+
+private:
+    std::optional<QDateTime> dateFrom;
+    std::optional<QDateTime> dateTo;
+    QString m_search_string;
+    quint32 typeFilter;
+    CAmount minAmount{0};
+    bool showInactive{true};
+};
+
+#endif // SIXBIT_QT_TRANSACTIONFILTERPROXY_H

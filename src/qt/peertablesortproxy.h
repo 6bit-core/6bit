@@ -1,0 +1,26 @@
+// Copyright (c) 2019-present The Bitcoin Core developers
+// Copyright (c) 2020-Copyright (c) 2026-present The Sixbit Core developers
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or https://opensource.org/license/mit/.
+
+#ifndef SIXBIT_QT_PEERTABLESORTPROXY_H
+#define SIXBIT_QT_PEERTABLESORTPROXY_H
+
+#include <QSortFilterProxyModel>
+
+QT_BEGIN_NAMESPACE
+class QModelIndex;
+QT_END_NAMESPACE
+
+class PeerTableSortProxy : public QSortFilterProxyModel
+{
+    Q_OBJECT
+
+public:
+    explicit PeerTableSortProxy(QObject* parent = nullptr);
+
+protected:
+    bool lessThan(const QModelIndex& left_index, const QModelIndex& right_index) const override;
+};
+
+#endif // SIXBIT_QT_PEERTABLESORTPROXY_H

@@ -1,0 +1,129 @@
+.TH 6BIT-CLI "1" "April 2026" "sixbit-cli v30.2.0" "User Commands"
+
+.SH NAME
+sixbit-cli \- command-line RPC client for Sixbit Core
+
+.SH SYNOPSIS
+.B sixbit-cli
+[\fIoptions\fR] \fIcommand\fR [params...]
+
+.br
+.B sixbit-cli
+[\fIoptions\fR] \fB-named\fR \fIcommand\fR [name=value...]
+
+.br
+.B sixbit-cli
+[\fIoptions\fR] help [command]
+
+.SH DESCRIPTION
+Command-line RPC client for Sixbit Core (v30.2.0).
+
+.PP
+sixbit-cli provides a command-line interface to interact with a Sixbit Core RPC server.
+
+.PP
+It can be used to query network information, manage wallets, create or broadcast transactions, and control the Sixbit Core server.
+
+.PP
+Use "help" to list all commands, or "help <command>" for detailed help.
+The \fB-named\fR option allows parameters to be passed using key=value format.
+
+.SH OPTIONS
+
+.TP
+\fB-color=\fR<when>
+Color output (default: auto). Values: always, auto, never.
+
+.TP
+\fB-conf=\fR<file>
+Specify configuration file (default: sixbit.conf).
+
+.TP
+\fB-datadir=\fR<dir>
+Specify data directory.
+
+.TP
+\fB-help\fR
+Print help message and exit.
+
+.TP
+\fB-named\fR
+Use named instead of positional arguments.
+
+.TP
+\fB-rpcconnect=\fR<ip>
+Connect to node at <ip> (default: 127.0.0.1).
+
+.TP
+\fB-rpcport=\fR<port>
+Connect to JSON-RPC on <port>.
+
+.TP
+\fB-rpcuser=\fR<user>
+RPC username.
+
+.TP
+\fB-rpcpassword=\fR<pw>
+RPC password.
+
+.TP
+\fB-rpcwait\fR
+Wait for RPC server to start.
+
+.TP
+\fB-rpcwallet=\fR<wallet>
+Use specific wallet.
+
+.TP
+\fB-stdin\fR
+Read arguments from standard input.
+
+.TP
+\fB-version\fR
+Print version and exit.
+
+.SH CHAIN OPTIONS
+
+.TP
+\fB-chain=\fR<chain>
+Select chain (main, testnet4, signet, regtest).
+
+.TP
+\fB-signet\fR
+Use signet chain.
+
+.TP
+\fB-testnet4\fR
+Use testnet4 chain.
+
+.SH CLI COMMANDS
+
+.TP
+\fB-addrinfo\fR
+Show known address statistics.
+
+.TP
+\fB-generate\fR
+Generate blocks.
+
+.TP
+\fB-getinfo\fR
+Get general node information.
+
+.TP
+\fB-netinfo\fR
+Show network peer information.
+
+.SH COPYRIGHT
+Copyright (C) 2009-2026 The Sixbit Core developers
+
+This is experimental software.
+
+Distributed under the MIT license.
+See COPYING or <https://opensource.org/license/MIT>.
+
+.SH "SEE ALSO"
+.BR sixbitd (1),
+.BR sixbit-qt (1),
+.BR sixbit-tx (1),
+.BR sixbit-wallet (1)

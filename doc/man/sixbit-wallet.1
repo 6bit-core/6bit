@@ -1,0 +1,119 @@
+.TH sixbit-WALLET "1" "April 2026" "sixbit-wallet v1.0.0" "User Commands"
+.SH NAME
+sixbit-wallet \- wallet management tool for Sixbit Core
+.SH SYNOPSIS
+.B sixbit-wallet
+[\fIoptions\fR] \fIcommand\fR
+.SH DESCRIPTION
+Sixbit Core sixbit-wallet utility version v1.0.0
+.PP
+The
+.B sixbit-wallet
+tool is an offline utility for creating and interacting with Sixbit Core wallet files.
+.PP
+By default,
+.B sixbit-wallet
+operates on wallets in the default mainnet wallet directory within the data directory.
+.PP
+To select a different wallet or location, use the
+\fB-datadir\fR,
+\fB-wallet\fR,
+and chain selection options.
+.SH OPTIONS
+.HP
+\fB-datadir=\fR<dir>
+.IP
+Specify data directory.
+.HP
+\fB-dumpfile=\fR<file>
+.IP
+When used with \fBdump\fR, writes wallet records to this file.
+When used with \fBcreatefromdump\fR, loads records from this file into a new wallet.
+.HP
+\fB-help\fR
+.IP
+Print this help message and exit (also \fB-h\fR or \fB-?\fR).
+.HP
+\fB-version\fR
+.IP
+Print version information and exit.
+.HP
+\fB-wallet=\fR<name>
+.IP
+Specify wallet name.
+
+.PP
+Debugging options:
+.HP
+\fB-debug=\fR<category>
+.IP
+Output debugging information (default: none).
+.HP
+\fB-printtoconsole\fR
+.IP
+Send debug information to the console.
+
+.PP
+Chain selection options:
+.HP
+\fB-chain=\fR<chain>
+.IP
+Use the chain <chain> (default: main). Allowed values: main, test, testnet4, signet, regtest.
+.HP
+\fB-signet\fR
+.IP
+Use the signet chain. Equivalent to \fB-chain=signet\fR.
+.HP
+\fB-signetchallenge\fR
+.IP
+Blocks must satisfy the given script to be considered valid (signet only).
+.HP
+\fB-signetseednode\fR
+.IP
+Specify a seed node for the signet network (hostname[:port]). May be specified multiple times.
+.HP
+\fB-testnet\fR
+.IP
+Use the testnet3 chain. Equivalent to \fB-chain=test\fR.
+This option is deprecated and will be removed in a future release.
+.HP
+\fB-testnet4\fR
+.IP
+Use the testnet4 chain. Equivalent to \fB-chain=testnet4\fR.
+
+.PP
+Commands:
+.IP
+create
+.IP
+Create a new descriptor wallet file.
+.IP
+createfromdump
+.IP
+Create a new wallet from a dump file.
+.IP
+dump
+.IP
+Print all wallet key-value records.
+.IP
+info
+.IP
+Display wallet information.
+
+.SH COPYRIGHT
+Copyright (C) 2026 The Sixbit Core developers
+.PP
+Please contribute if you find Sixbit Core useful. Visit
+<https://6bit.dev/>
+for further information.
+.PP
+Source code is available at
+<https://github.com/6bit-core/6bit>.
+.PP
+This is experimental software.
+Distributed under the MIT software license; see the accompanying file COPYING
+or
+<https://opensource.org/license/MIT>.
+
+.SH "SEE ALSO"
+sixbitd(1), sixbit-cli(1), sixbit-tx(1), sixbit-wallet(1), sixbit-util(1), sixbit-qt(1)

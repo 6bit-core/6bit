@@ -1,0 +1,22 @@
+// Copyright (c) 2019-present The Bitcoin Core developers
+// Copyright (c) 2026-present The Sixbit Core developers
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or https://opensource.org/license/mit/.
+
+#ifndef SIXBIT_KERNEL_CONTEXT_H
+#define SIXBIT_KERNEL_CONTEXT_H
+
+namespace kernel {
+//! Context struct holding the kernel library's logically global state, and
+//! passed to external libsixbit_kernel functions which need access to this
+//! state. The kernel library API is a work in progress, so state organization
+//! and member list will evolve over time.
+//!
+//! State stored directly in this struct should be simple. More complex state
+//! should be stored to std::unique_ptr members pointing to opaque types.
+struct Context {
+    Context();
+};
+} // namespace kernel
+
+#endif // SIXBIT_KERNEL_CONTEXT_H

@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+#
+#  sixbitd The sixbit core server.
+#
+# chkconfig: 345 80 20
+# description: sixbitd
+# processname: sixbitd
+#
+
+. /etc/init.d/functions
+
+if [ -f /etc/sysconfig/sixbitd ]; then
+    . /etc/sysconfig/sixbitd
+fi
+
+RETVAL=0
+
+prog=sixbitd
+lockfile=${SIXBITD_LOCKFILE-/var/lock/subsys/sixbitd}
+
+sixbitd_bin=${SIXBITD_BIN-/usr/bin/sixbitd}
+sixbitd_opts=${SIXBITD_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $sixbitd_bin $sixbitd_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog -t 600
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac

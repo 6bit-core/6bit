@@ -1,0 +1,121 @@
+# PSBT Howto for Sixbit Core
+
+This document describes the workflow for producing signed transactions using
+Partially Signed Coin Transactions (PSCT), along with the RPC commands used in
+typical scenarios.
+
+---
+
+## PSCT in general
+
+A PSCT is an interchange format for transactions that are not yet fully signed,
+along with metadata needed to complete the signing process.
+
+It is designed to simplify workflows where multiple parties collaborate to
+produce a transaction. Common use cases include:
+
+- Hardware wallets
+- Multisignature setups
+- Air-gapped signing workflows
+
+---
+
+## Overall workflow
+
+The construction of a fully signed transaction typically involves the following roles:
+
+- A **Creator** constructs an initial PSCT with inputs and outputs, but no metadata.
+- An **Updater** adds UTXO data, scripts, and public keys for each input (and possibly outputs).
+- **Signers** verify the transaction and produce partial signatures for inputs they control.
+- A **Finalizer** converts partial signatures into final `scriptSig` and/or `scriptWitness` data.
+- An **Extractor** converts the fully finalized PSCT into a broadcastable transaction.
+
+Each step adds data to the PSCT until all inputs are fully signed.
+
+In sequential workflows, the PSCT is passed from one role to the next.  
+In parallel workflows, **Combiners** merge multiple PSCTs that contain different pieces of metadata or signatures.
+
+> The role names above are defined in BIP174. In practice, software often implements multiple roles simultaneously.
+
+---
+
+## PSCT in Sixbit Core
+
+### RPCs
+
+- **`converttoPSCT` (Creator)**  
+  Converts an unsigned raw transaction into a PSCT. Existing signatures are ignored.
+
+- **`createPSCT` (Creator)**  
+  Creates a PSCT from specified inputs and outputs without additional metadata.  
+  Equivalent to `createrawtransaction` ? `converttoPSCT`.
+
+- **`walletcreatefundedPSCT` (Creator, Updater)**  
+  Creates, funds, and updates a PSCT using wallet data:
+  - Adds inputs and change outputs
+  - Includes UTXO metadata
+  - Adds known scripts and key information
+
+  Equivalent to:  
+  `createrawtransaction` ? `fundrawtransaction` ? `converttoPSCT`
+
+- **`walletprocessPSCT` (Updater, Signer, Finalizer)**  
+  Updates a PSCT with missing metadata, signs inputs when possible, and finalizes them if possible.
+
+- **`descriptorprocessPSCT` (Updater, Signer, Finalizer)**  
+  Similar to `walletprocessPSCT`, but uses provided descriptors instead of wallet state.  
+  Can fetch UTXO data from the UTXO set and mempool (SegWit inputs only).
+
+- **`utxoupdatePSCT` (Updater)**  
+  Updates a PSCT with UTXO data from the node’s UTXO set (SegWit inputs only).
+
+- **`finalizePSCT` (Finalizer, Extractor)**  
+  Finalizes inputs and, if complete, extracts a fully signed transaction.  
+  The result can be broadcast using `sendrawtransaction`.
+
+- **`combinePSCT` (Combiner)**  
+  Merges multiple PSCTs for the same underlying transaction.  
+  Useful when collecting signatures from multiple parties.
+
+- **`joinPSCTs` (Creator)**  
+  Combines multiple PSCTs by concatenating inputs and outputs.  
+  Useful for constructing CoinJoin-style transactions.
+
+- **`decodePSCT`**  
+  Displays all PSCT contents in a human-readable format, including fee information (if available).
+
+- **`analyzePSCT`**  
+  Reports:
+  - Current state of each input
+  - Next required step
+  - Estimated fee, weight, and feerate (if possible)
+
+---
+
+## Workflows
+
+### Multisig with multiple Sixbit Core instances
+
+For a quick start, see:  
+**Basic M-of-N multisig example using descriptor wallets and PSCTs**  
+(./descriptors.md#basic-multisig-example)
+
+---
+
+## Notes
+
+- PSCT workflows allow flexible separation of responsibilities across devices and systems.
+- Descriptor wallets significantly improve automation and compatibility with PSCT.
+- Many RPCs combine multiple roles for convenience (e.g., `walletprocessPSCT`).
+
+---
+
+## Future Extensions
+
+Potential improvements to PSCT workflows in Sixbit Core may include:
+
+- Expanded descriptor-based signing capabilities
+- Better support for non-SegWit inputs in updater RPCs
+- Improved parallel signing coordination
+
+---

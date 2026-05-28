@@ -1,0 +1,26 @@
+if(NOT DEFINED BUILD_INFO_HEADER_PATH)
+  message(FATAL_ERROR "BUILD_INFO_HEADER_PATH not set")
+endif()
+
+if(NOT DEFINED SOURCE_DIR)
+  message(FATAL_ERROR "SOURCE_DIR not set")
+endif()
+
+set(BUILD_DESC "unknown")
+
+find_package(Git QUIET)
+
+if(GIT_FOUND AND EXISTS "${SOURCE_DIR}/.git")
+  execute_process(
+    COMMAND "${GIT_EXECUTABLE}" describe --tags --dirty --always
+    WORKING_DIRECTORY "${SOURCE_DIR}"
+    OUTPUT_VARIABLE BUILD_DESC
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+    ERROR_QUIET
+  )
+endif()
+
+file(WRITE "${BUILD_INFO_HEADER_PATH}" "#ifndef SIXBIT_BUILD_INFO_H\n")
+file(APPEND "${BUILD_INFO_HEADER_PATH}" "#define SIXBIT_BUILD_INFO_H\n")
+file(APPEND "${BUILD_INFO_HEADER_PATH}" "#define BUILD_GIT_DESC \"${BUILD_DESC}\"\n")
+file(APPEND "${BUILD_INFO_HEADER_PATH}" "#endif\n")

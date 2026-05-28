@@ -1,0 +1,34 @@
+# ThreadSanitizer suppressions
+# ============================
+#
+# https://github.com/google/sanitizers/wiki/ThreadSanitizerSuppressions
+
+# deadlock (TODO fix)
+deadlock:Chainstate::ConnectTip
+
+# Intentional deadlock in tests
+deadlock:sync_tests::potential_deadlock_detected
+
+# Wildcard for all of the gui
+race:sixbit-qt
+race:src/qt/test/*
+deadlock:src/qt/test/*
+
+# External libraries
+# ------------------
+race:libzmq
+
+# To reproduce, build from depends with CFLAGS='-O0 -g' CXXFLAGS='-O0 -g'
+race:zmq::*
+
+# Intermittent issues
+# -------------------
+#
+# Suppressions that follow might only happen intermittently, thus they are not
+# reproducible. Make sure to include a link to a full trace.
+
+race:CZMQAbstractPublishNotifier::SendZmqMessage
+
+race:epoll_ctl
+
+race:std::__1::ios_base::*

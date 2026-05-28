@@ -1,0 +1,44 @@
+// Copyright (c) 2019-present The Bitcoin Core developers
+// Copyright (c) 2009-Copyright (c) 2026-present The Sixbit Core developers
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or https://opensource.org/license/mit/.
+
+#ifndef SIXBIT_RPC_REGISTER_H
+#define SIXBIT_RPC_REGISTER_H
+
+#include <sixbit-build-config.h> // IWYU pragma: keep
+
+/** These are in one header file to avoid creating tons of single-function
+ * headers for everything under src/rpc/ */
+class CRPCTable;
+
+void RegisterBlockchainRPCCommands(CRPCTable &tableRPC);
+void RegisterFeeRPCCommands(CRPCTable&);
+void RegisterMempoolRPCCommands(CRPCTable&);
+void RegisterMiningRPCCommands(CRPCTable &tableRPC);
+void RegisterNodeRPCCommands(CRPCTable&);
+void RegisterNetRPCCommands(CRPCTable&);
+void RegisterOutputScriptRPCCommands(CRPCTable&);
+void RegisterRawTransactionRPCCommands(CRPCTable &tableRPC);
+void RegisterSignMessageRPCCommands(CRPCTable&);
+void RegisterSignerRPCCommands(CRPCTable &tableRPC);
+void RegisterTxoutProofRPCCommands(CRPCTable&);
+
+static inline void RegisterAllCoreRPCCommands(CRPCTable &t)
+{
+    RegisterBlockchainRPCCommands(t);
+    RegisterFeeRPCCommands(t);
+    RegisterMempoolRPCCommands(t);
+    RegisterMiningRPCCommands(t);
+    RegisterNodeRPCCommands(t);
+    RegisterNetRPCCommands(t);
+    RegisterOutputScriptRPCCommands(t);
+    RegisterRawTransactionRPCCommands(t);
+    RegisterSignMessageRPCCommands(t);
+#ifdef ENABLE_EXTERNAL_SIGNER
+    RegisterSignerRPCCommands(t);
+#endif // ENABLE_EXTERNAL_SIGNER
+    RegisterTxoutProofRPCCommands(t);
+}
+
+#endif // SIXBIT_RPC_REGISTER_H
