@@ -4250,8 +4250,27 @@ static bool ContextualCheckBlock(const CBlock& block, BlockValidationState& stat
     if (DeploymentActiveAfter(pindexPrev, chainman, Consensus::DEPLOYMENT_HEIGHTINCB))
     {
         CScript expect = CScript() << nHeight;
-        if (block.vtx[0]->vin[0].scriptSig.size() < expect.size() ||
-            !std::equal(expect.begin(), expect.end(), block.vtx[0]->vin[0].scriptSig.begin())) {
+
+        // Sixbit compatibility: accept standard CScript height and explicit BIP34 push encoding.
+        CScript expect_push;
+        if (nHeight >= 0 && nHeight <= 0x7fffffff) {
+            std::vector<unsigned char> height_bytes;
+            int h = nHeight;
+            do {
+                height_bytes.push_back(h & 0xff);
+                h >>= 8;
+            } while (h);
+            if (height_bytes.back() & 0x80) height_bytes.push_back(0x00);
+            expect_push << height_bytes;
+        }
+
+        const auto& sig = block.vtx[0]->vin[0].scriptSig;
+        const bool match_core = sig.size() >= expect.size() &&
+            std::equal(expect.begin(), expect.end(), sig.begin());
+        const bool match_push = sig.size() >= expect_push.size() &&
+            std::equal(expect_push.begin(), expect_push.end(), sig.begin());
+
+        if (!match_core && !match_push) {
             return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cb-height", "block height mismatch in coinbase");
         }
     }
