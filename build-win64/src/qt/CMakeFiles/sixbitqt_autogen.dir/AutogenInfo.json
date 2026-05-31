@@ -1,0 +1,512 @@
+{
+	"BUILD_DIR" : "/home/ubuntu/6bit/build-win64/src/qt/sixbitqt_autogen",
+	"CMAKE_BINARY_DIR" : "/home/ubuntu/6bit/build-win64",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/ubuntu/6bit/build-win64/src/qt",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/ubuntu/6bit/src/qt",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/ubuntu/6bit/src/qt/CMakeLists.txt",
+		"/home/ubuntu/6bit/src/qt/sixbit_locale.qrc",
+		"/home/ubuntu/6bit/cmake/windows-app.manifest.in",
+		"/home/ubuntu/6bit/src/qt/sixbit.qrc",
+		"/home/ubuntu/6bit/build-win64/src/qt/sixbit_locale.qrc"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/ubuntu/6bit",
+	"DEP_FILE" : "/home/ubuntu/6bit/build-win64/src/qt/sixbitqt_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "sixbitqt_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"/home/ubuntu/6bit/src/qt/addressbookpage.h",
+			"MU",
+			"EWIEGA46WW/moc_addressbookpage.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/addresstablemodel.h",
+			"MU",
+			"EWIEGA46WW/moc_addresstablemodel.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/askpassphrasedialog.h",
+			"MU",
+			"EWIEGA46WW/moc_askpassphrasedialog.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/bantablemodel.h",
+			"MU",
+			"EWIEGA46WW/moc_bantablemodel.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/clientmodel.h",
+			"MU",
+			"EWIEGA46WW/moc_clientmodel.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/coincontroldialog.h",
+			"MU",
+			"EWIEGA46WW/moc_coincontroldialog.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/coincontroltreewidget.h",
+			"MU",
+			"EWIEGA46WW/moc_coincontroltreewidget.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/createwalletdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_createwalletdialog.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/csvmodelwriter.h",
+			"MU",
+			"EWIEGA46WW/moc_csvmodelwriter.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/editaddressdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_editaddressdialog.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/freespacechecker.h",
+			"MU",
+			"EWIEGA46WW/moc_freespacechecker.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/guiutil.h",
+			"MU",
+			"EWIEGA46WW/moc_guiutil.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/initexecutor.h",
+			"MU",
+			"EWIEGA46WW/moc_initexecutor.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/intro.h",
+			"MU",
+			"EWIEGA46WW/moc_intro.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/modaloverlay.h",
+			"MU",
+			"EWIEGA46WW/moc_modaloverlay.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/networkstyle.h",
+			"MU",
+			"EWIEGA46WW/moc_networkstyle.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/notificator.h",
+			"MU",
+			"EWIEGA46WW/moc_notificator.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/openuridialog.h",
+			"MU",
+			"EWIEGA46WW/moc_openuridialog.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/optionsdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_optionsdialog.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/optionsmodel.h",
+			"MU",
+			"EWIEGA46WW/moc_optionsmodel.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/overviewpage.h",
+			"MU",
+			"EWIEGA46WW/moc_overviewpage.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/paymentserver.h",
+			"MU",
+			"EWIEGA46WW/moc_paymentserver.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/peertablemodel.h",
+			"MU",
+			"EWIEGA46WW/moc_peertablemodel.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/peertablesortproxy.h",
+			"MU",
+			"EWIEGA46WW/moc_peertablesortproxy.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/platformstyle.h",
+			"MU",
+			"EWIEGA46WW/moc_platformstyle.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/psbtoperationsdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_psbtoperationsdialog.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/qrimagewidget.h",
+			"MU",
+			"EWIEGA46WW/moc_qrimagewidget.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/qvalidatedlineedit.h",
+			"MU",
+			"EWIEGA46WW/moc_qvalidatedlineedit.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/qvaluecombobox.h",
+			"MU",
+			"EWIEGA46WW/moc_qvaluecombobox.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/receivecoinsdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_receivecoinsdialog.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/receiverequestdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_receiverequestdialog.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/recentrequeststablemodel.h",
+			"MU",
+			"EWIEGA46WW/moc_recentrequeststablemodel.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/rpcconsole.h",
+			"MU",
+			"EWIEGA46WW/moc_rpcconsole.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/sendcoinsdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_sendcoinsdialog.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/sendcoinsentry.h",
+			"MU",
+			"EWIEGA46WW/moc_sendcoinsentry.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/signverifymessagedialog.h",
+			"MU",
+			"EWIEGA46WW/moc_signverifymessagedialog.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/sixbit.h",
+			"MU",
+			"EWIEGA46WW/moc_sixbit.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/sixbitaddressvalidator.h",
+			"MU",
+			"EWIEGA46WW/moc_sixbitaddressvalidator.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/sixbitamountfield.h",
+			"MU",
+			"EWIEGA46WW/moc_sixbitamountfield.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/sixbitgui.h",
+			"MU",
+			"EWIEGA46WW/moc_sixbitgui.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/sixbitunits.h",
+			"MU",
+			"EWIEGA46WW/moc_sixbitunits.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/splashscreen.h",
+			"MU",
+			"EWIEGA46WW/moc_splashscreen.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/trafficgraphwidget.h",
+			"MU",
+			"EWIEGA46WW/moc_trafficgraphwidget.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/transactiondesc.h",
+			"MU",
+			"EWIEGA46WW/moc_transactiondesc.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/transactiondescdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_transactiondescdialog.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/transactionfilterproxy.h",
+			"MU",
+			"EWIEGA46WW/moc_transactionfilterproxy.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/transactionoverviewwidget.h",
+			"MU",
+			"EWIEGA46WW/moc_transactionoverviewwidget.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/transactionrecord.h",
+			"MU",
+			"EWIEGA46WW/moc_transactionrecord.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/transactiontablemodel.h",
+			"MU",
+			"EWIEGA46WW/moc_transactiontablemodel.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/transactionview.h",
+			"MU",
+			"EWIEGA46WW/moc_transactionview.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/utilitydialog.h",
+			"MU",
+			"EWIEGA46WW/moc_utilitydialog.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/walletcontroller.h",
+			"MU",
+			"EWIEGA46WW/moc_walletcontroller.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/walletframe.h",
+			"MU",
+			"EWIEGA46WW/moc_walletframe.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/walletmodel.h",
+			"MU",
+			"EWIEGA46WW/moc_walletmodel.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/walletmodeltransaction.h",
+			"MU",
+			"EWIEGA46WW/moc_walletmodeltransaction.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/walletview.h",
+			"MU",
+			"EWIEGA46WW/moc_walletview.cpp",
+			null
+		],
+		[
+			"/home/ubuntu/6bit/src/qt/winshutdownmonitor.h",
+			"MU",
+			"EWIEGA46WW/moc_winshutdownmonitor.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/ubuntu/6bit/build-win64/src/qt/sixbitqt_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/ubuntu/6bit/build-win64/src/qt/sixbitqt_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"BOOST_MULTI_INDEX_DISABLE_SERIALIZATION",
+		"MINGW_HAS_SECURE_API=1",
+		"NOMINMAX",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NETWORK_LIB",
+		"QT_NO_DEBUG",
+		"QT_NO_KEYWORDS",
+		"QT_USE_QSTRINGBUILDER",
+		"QT_WIDGETS_LIB",
+		"UNICODE",
+		"WIN32",
+		"WIN32_LEAN_AND_MEAN",
+		"WIN64",
+		"_ENABLE_EXTENDED_ALIGNED_STORAGE",
+		"_MT",
+		"_UNICODE",
+		"_WIN32_IE=0x0A00",
+		"_WIN32_WINNT=0x0A00",
+		"_WIN64",
+		"_WINDOWS"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/ubuntu/6bit/build-win64/src",
+		"/home/ubuntu/6bit/src",
+		"/home/ubuntu/6bit/src/univalue/include",
+		"/home/ubuntu/6bit/src/leveldb/include",
+		"/home/ubuntu/6bit/depends/x86_64-w64-mingw32/include/QtWidgets",
+		"/home/ubuntu/6bit/depends/x86_64-w64-mingw32/include",
+		"/home/ubuntu/6bit/depends/x86_64-w64-mingw32/include/QtCore",
+		"/home/ubuntu/6bit/depends/x86_64-w64-mingw32/mkspecs/win32-g++",
+		"/home/ubuntu/6bit/depends/x86_64-w64-mingw32/include/QtGui",
+		"/home/ubuntu/6bit/depends/x86_64-w64-mingw32/include/QtNetwork",
+		"/usr/lib/gcc/x86_64-w64-mingw32/13-posix/include/c++",
+		"/usr/lib/gcc/x86_64-w64-mingw32/13-posix/include/c++/x86_64-w64-mingw32",
+		"/usr/lib/gcc/x86_64-w64-mingw32/13-posix/include/c++/backward",
+		"/usr/lib/gcc/x86_64-w64-mingw32/13-posix/include",
+		"/usr/lib/gcc/x86_64-w64-mingw32/13-posix/include-fixed",
+		"/usr/x86_64-w64-mingw32/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [ "-p/home/ubuntu/6bit/src/qt" ],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/bin/x86_64-w64-mingw32-g++-posix",
+		"-std=c++20",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/ubuntu/6bit/build-win64/src/qt/sixbitqt_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 8,
+	"PARSE_CACHE_FILE" : "/home/ubuntu/6bit/build-win64/src/qt/CMakeFiles/sixbitqt_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/home/ubuntu/6bit/depends/x86_64-w64-mingw32/native/libexec/moc",
+	"QT_UIC_EXECUTABLE" : "/home/ubuntu/6bit/depends/x86_64-w64-mingw32/native/libexec/uic",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 7,
+	"SETTINGS_FILE" : "/home/ubuntu/6bit/build-win64/src/qt/CMakeFiles/sixbitqt_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "/home/ubuntu/6bit/src/qt/addressbookpage.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/addresstablemodel.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/askpassphrasedialog.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/bantablemodel.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/clientmodel.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/coincontroldialog.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/coincontroltreewidget.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/createwalletdialog.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/csvmodelwriter.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/editaddressdialog.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/freespacechecker.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/guiutil.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/initexecutor.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/intro.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/modaloverlay.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/networkstyle.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/notificator.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/openuridialog.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/optionsdialog.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/optionsmodel.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/overviewpage.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/paymentserver.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/peertablemodel.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/peertablesortproxy.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/platformstyle.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/psbtoperationsdialog.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/qrimagewidget.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/qvalidatedlineedit.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/qvaluecombobox.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/receivecoinsdialog.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/receiverequestdialog.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/recentrequeststablemodel.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/rpcconsole.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/sendcoinsdialog.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/sendcoinsentry.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/signverifymessagedialog.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/sixbit.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/sixbitaddressvalidator.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/sixbitamountfield.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/sixbitgui.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/sixbitunits.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/splashscreen.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/trafficgraphwidget.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/transactiondesc.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/transactiondescdialog.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/transactionfilterproxy.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/transactionoverviewwidget.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/transactionrecord.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/transactiontablemodel.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/transactionview.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/utilitydialog.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/walletcontroller.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/walletframe.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/walletmodel.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/walletmodeltransaction.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/walletview.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/winshutdownmonitor.cpp", "MU", null ]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [ "/home/ubuntu/6bit/src/qt/forms" ],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

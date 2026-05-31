@@ -1,0 +1,1 @@
+/home/ubuntu/6bit/test/functional/feature_remove_pruned_files_on_startup.py

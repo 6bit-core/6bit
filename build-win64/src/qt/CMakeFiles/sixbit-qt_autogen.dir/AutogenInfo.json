@@ -1,0 +1,118 @@
+{
+	"BUILD_DIR" : "/home/ubuntu/6bit/build-win64/src/qt/sixbit-qt_autogen",
+	"CMAKE_BINARY_DIR" : "/home/ubuntu/6bit/build-win64",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/ubuntu/6bit/build-win64/src/qt",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/ubuntu/6bit/src/qt",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/ubuntu/6bit/src/qt/CMakeLists.txt",
+		"/home/ubuntu/6bit/src/qt/sixbit_locale.qrc",
+		"/home/ubuntu/6bit/cmake/windows-app.manifest.in",
+		"/home/ubuntu/6bit/src/qt/sixbit.qrc",
+		"/home/ubuntu/6bit/build-win64/src/qt/sixbit_locale.qrc"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/ubuntu/6bit",
+	"DEP_FILE" : "/home/ubuntu/6bit/build-win64/src/qt/sixbit-qt_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "sixbit-qt_autogen/timestamp",
+	"HEADERS" : [],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/ubuntu/6bit/build-win64/src/qt/sixbit-qt_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/ubuntu/6bit/build-win64/src/qt/sixbit-qt_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"MINGW_HAS_SECURE_API=1",
+		"NOMINMAX",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
+		"QT_NO_KEYWORDS",
+		"QT_USE_QSTRINGBUILDER",
+		"QT_WIDGETS_LIB",
+		"UNICODE",
+		"WIN32",
+		"WIN32_LEAN_AND_MEAN",
+		"WIN64",
+		"_ENABLE_EXTENDED_ALIGNED_STORAGE",
+		"_MT",
+		"_UNICODE",
+		"_WIN32_IE=0x0A00",
+		"_WIN32_WINNT=0x0A00",
+		"_WIN64",
+		"_WINDOWS"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/ubuntu/6bit/build-win64/src",
+		"/home/ubuntu/6bit/src",
+		"/home/ubuntu/6bit/depends/x86_64-w64-mingw32/include/QtWidgets",
+		"/home/ubuntu/6bit/depends/x86_64-w64-mingw32/include",
+		"/home/ubuntu/6bit/depends/x86_64-w64-mingw32/include/QtCore",
+		"/home/ubuntu/6bit/depends/x86_64-w64-mingw32/mkspecs/win32-g++",
+		"/home/ubuntu/6bit/depends/x86_64-w64-mingw32/include/QtGui",
+		"/usr/lib/gcc/x86_64-w64-mingw32/13-posix/include/c++",
+		"/usr/lib/gcc/x86_64-w64-mingw32/13-posix/include/c++/x86_64-w64-mingw32",
+		"/usr/lib/gcc/x86_64-w64-mingw32/13-posix/include/c++/backward",
+		"/usr/lib/gcc/x86_64-w64-mingw32/13-posix/include",
+		"/usr/lib/gcc/x86_64-w64-mingw32/13-posix/include-fixed",
+		"/usr/x86_64-w64-mingw32/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [ "-p/home/ubuntu/6bit/src/qt" ],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/bin/x86_64-w64-mingw32-g++-posix",
+		"-std=c++20",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/ubuntu/6bit/build-win64/src/qt/sixbit-qt_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : 
+	[
+		"/home/ubuntu/6bit/build-win64/src/qt/sixbitqt_autogen/EJRQKI7XPS/qrc_sixbit_locale.cpp",
+		"/home/ubuntu/6bit/build-win64/src/qt/sixbitqt_autogen/EWIEGA46WW/qrc_sixbit.cpp",
+		"/home/ubuntu/6bit/build-win64/src/qt/sixbitqt_autogen/mocs_compilation.cpp"
+	],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 8,
+	"PARSE_CACHE_FILE" : "/home/ubuntu/6bit/build-win64/src/qt/CMakeFiles/sixbit-qt_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/home/ubuntu/6bit/depends/x86_64-w64-mingw32/native/libexec/moc",
+	"QT_UIC_EXECUTABLE" : "/home/ubuntu/6bit/depends/x86_64-w64-mingw32/native/libexec/uic",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 7,
+	"SETTINGS_FILE" : "/home/ubuntu/6bit/build-win64/src/qt/CMakeFiles/sixbit-qt_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "/home/ubuntu/6bit/src/init/sixbit-qt.cpp", "MU", null ],
+		[ "/home/ubuntu/6bit/src/qt/main.cpp", "MU", null ]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [ "/home/ubuntu/6bit/src/qt/forms" ],
+	"UIC_SKIP" : 
+	[
+		"/home/ubuntu/6bit/build-win64/src/qt/sixbitqt_autogen/EJRQKI7XPS/qrc_sixbit_locale.cpp",
+		"/home/ubuntu/6bit/build-win64/src/qt/sixbitqt_autogen/EWIEGA46WW/qrc_sixbit.cpp",
+		"/home/ubuntu/6bit/build-win64/src/qt/sixbitqt_autogen/mocs_compilation.cpp"
+	],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

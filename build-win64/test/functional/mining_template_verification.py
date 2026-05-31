@@ -1,0 +1,1 @@
+/home/ubuntu/6bit/test/functional/mining_template_verification.py

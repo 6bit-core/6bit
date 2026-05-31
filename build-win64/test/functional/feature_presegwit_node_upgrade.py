@@ -1,0 +1,1 @@
+/home/ubuntu/6bit/test/functional/feature_presegwit_node_upgrade.py

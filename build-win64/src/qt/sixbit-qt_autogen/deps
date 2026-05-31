@@ -1,0 +1,9 @@
+sixbit-qt_autogen/timestamp: \
+	/home/ubuntu/6bit/build-win64/src/qt/sixbit_locale.qrc \
+	/home/ubuntu/6bit/cmake/windows-app.manifest.in \
+	/home/ubuntu/6bit/src/init/sixbit-qt.cpp \
+	/home/ubuntu/6bit/src/qt/CMakeLists.txt \
+	/home/ubuntu/6bit/src/qt/main.cpp \
+	/home/ubuntu/6bit/src/qt/sixbit.qrc \
+	/home/ubuntu/6bit/src/qt/sixbit_locale.qrc \
+	/usr/bin/cmake

@@ -1,0 +1,1 @@
+/home/ubuntu/6bit/test/functional/mining_getblocktemplate_longpoll.py

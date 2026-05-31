@@ -1,0 +1,1 @@
+/home/ubuntu/6bit/test/functional/wallet_multisig_descriptor_psbt.py

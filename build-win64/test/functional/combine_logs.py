@@ -1,0 +1,1 @@
+/home/ubuntu/6bit/test/functional/combine_logs.py

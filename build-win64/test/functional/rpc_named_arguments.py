@@ -1,0 +1,1 @@
+/home/ubuntu/6bit/test/functional/rpc_named_arguments.py
