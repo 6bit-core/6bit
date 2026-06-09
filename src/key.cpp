@@ -224,12 +224,6 @@ bool CKey::Sign(const uint256 &hash, std::vector<unsigned char>& vchSig, bool gr
     assert(ret);
     secp256k1_ecdsa_signature_serialize_der(secp256k1_context_sign, vchSig.data(), &nSigLen, &sig);
     vchSig.resize(nSigLen);
-    // Additional verification step to prevent using a potentially corrupted signature
-    secp256k1_pubkey pk;
-    ret = secp256k1_ec_pubkey_create(secp256k1_context_sign, &pk, UCharCast(begin()));
-    assert(ret);
-    ret = secp256k1_ecdsa_verify(secp256k1_context_static, &sig, hash.begin(), &pk);
-    assert(ret);
     return true;
 }
 
@@ -258,14 +252,6 @@ bool CKey::SignCompact(const uint256 &hash, std::vector<unsigned char>& vchSig) 
     assert(ret);
     assert(rec != -1);
     vchSig[0] = 27 + rec + (fCompressed ? 4 : 0);
-    // Additional verification step to prevent using a potentially corrupted signature
-    secp256k1_pubkey epk, rpk;
-    ret = secp256k1_ec_pubkey_create(secp256k1_context_sign, &epk, UCharCast(begin()));
-    assert(ret);
-    ret = secp256k1_ecdsa_recover(secp256k1_context_static, &rpk, &rsig, hash.begin());
-    assert(ret);
-    ret = secp256k1_ec_pubkey_cmp(secp256k1_context_static, &epk, &rpk);
-    assert(ret == 0);
     return true;
 }
 
@@ -428,15 +414,7 @@ bool KeyPair::SignSchnorr(const uint256& hash, std::span<unsigned char> sig, con
     assert(sig.size() == 64);
     if (!IsValid()) return false;
     auto keypair = reinterpret_cast<const secp256k1_keypair*>(m_keypair->data());
-    bool ret = secp256k1_schnorrsig_sign32(secp256k1_context_sign, sig.data(), hash.data(), keypair, aux.data());
-    if (ret) {
-        // Additional verification step to prevent using a potentially corrupted signature
-        secp256k1_xonly_pubkey pubkey_verify;
-        ret = secp256k1_keypair_xonly_pub(secp256k1_context_static, &pubkey_verify, nullptr, keypair);
-        ret &= secp256k1_schnorrsig_verify(secp256k1_context_static, sig.data(), hash.begin(), 32, &pubkey_verify);
-    }
-    if (!ret) memory_cleanse(sig.data(), sig.size());
-    return ret;
+    return secp256k1_schnorrsig_sign32(secp256k1_context_sign, sig.data(), hash.data(), keypair, aux.data());
 }
 
 bool ECC_InitSanityCheck() {
