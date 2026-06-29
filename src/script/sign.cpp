@@ -569,7 +569,24 @@ bool ProduceSignature(const SigningProvider& provider, const BaseSignatureCreato
     sigdata.scriptSig = PushAll(result);
 
     // Test solution
-    sigdata.complete = solved && VerifyScript(sigdata.scriptSig, fromPubKey, &sigdata.scriptWitness, STANDARD_SCRIPT_VERIFY_FLAGS, creator.Checker());
+    ScriptError err = SCRIPT_ERR_OK;
+    bool verify_ok = VerifyScript(
+        sigdata.scriptSig,
+        fromPubKey,
+        &sigdata.scriptWitness,
+        STANDARD_SCRIPT_VERIFY_FLAGS,
+        creator.Checker(),
+        &err);
+
+    if (!verify_ok) {
+        std::cerr
+            << "VerifyScript FAILED"
+            << " err=" << ScriptErrorString(err)
+            << " script=" << HexStr(fromPubKey)
+            << std::endl;
+    }
+
+    sigdata.complete = solved && verify_ok;
     return sigdata.complete;
 }
 

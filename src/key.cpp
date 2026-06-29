@@ -221,8 +221,15 @@ bool CKey::Sign(const uint256 &hash, std::vector<unsigned char>& vchSig, bool gr
         WriteLE32(extra_entropy, ++counter);
         ret = secp256k1_ecdsa_sign(secp256k1_context_sign, &sig, hash.begin(), UCharCast(begin()), secp256k1_nonce_function_rfc6979, extra_entropy);
     }
-    assert(ret);
-    secp256k1_ecdsa_signature_serialize_der(secp256k1_context_sign, vchSig.data(), &nSigLen, &sig);
+    if (!ret) {
+        vchSig.clear();
+        return false;
+    }
+    ret = secp256k1_ecdsa_signature_serialize_der(secp256k1_context_sign, vchSig.data(), &nSigLen, &sig);
+    if (!ret) {
+        vchSig.clear();
+        return false;
+    }
     vchSig.resize(nSigLen);
     return true;
 }
@@ -236,7 +243,9 @@ bool CKey::VerifyPubKey(const CPubKey& pubkey) const {
     GetRandBytes(rnd);
     uint256 hash{Hash(str, rnd)};
     std::vector<unsigned char> vchSig;
-    Sign(hash, vchSig);
+    if (!Sign(hash, vchSig)) {
+        return false;
+    }
     return pubkey.Verify(hash, vchSig);
 }
 
@@ -247,10 +256,15 @@ bool CKey::SignCompact(const uint256 &hash, std::vector<unsigned char>& vchSig) 
     int rec = -1;
     secp256k1_ecdsa_recoverable_signature rsig;
     int ret = secp256k1_ecdsa_sign_recoverable(secp256k1_context_sign, &rsig, hash.begin(), UCharCast(begin()), secp256k1_nonce_function_rfc6979, nullptr);
-    assert(ret);
+    if (!ret) {
+        vchSig.clear();
+        return false;
+    }
     ret = secp256k1_ecdsa_recoverable_signature_serialize_compact(secp256k1_context_sign, &vchSig[1], &rec, &rsig);
-    assert(ret);
-    assert(rec != -1);
+    if (!ret || rec == -1) {
+        vchSig.clear();
+        return false;
+    }
     vchSig[0] = 27 + rec + (fCompressed ? 4 : 0);
     return true;
 }

@@ -17,3 +17,21 @@ depends/
 .vscode/
 .idea/
 __pycache__/
+
+# Build outputs
+build/
+build-*/
+build-win64/
+build-docker-linux/
+build-docker-win64/
+depends/work/
+depends/sources/
+depends/built/
+depends/x86_64-w64-mingw32/
+*.o
+*.obj
+*.a
+*.exe
+*.dll
+*.stamp*
+*.bak*

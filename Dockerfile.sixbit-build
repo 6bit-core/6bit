@@ -1,0 +1,21 @@
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+
+RUN apt update && apt install -y \
+  build-essential cmake ninja-build git pkg-config ccache python3 \
+  autoconf automake libtool bison curl zip unzip nsis gperf \
+  python3-zmq \
+  qt6-base-dev qt6-base-dev-tools qt6-tools-dev qt6-tools-dev-tools \
+  qt6-l10n-tools libqt6svg6-dev libgl1-mesa-dev libglu1-mesa-dev \
+  libevent-dev libboost-dev libboost-system-dev libboost-filesystem-dev \
+  libboost-test-dev libsqlite3-dev libzmq3-dev libminiupnpc-dev \
+  libqrencode-dev libssl-dev \
+  gcc-mingw-w64-x86-64-posix g++-mingw-w64-x86-64-posix \
+  && update-alternatives --set x86_64-w64-mingw32-gcc /usr/bin/x86_64-w64-mingw32-gcc-posix \
+  && update-alternatives --set x86_64-w64-mingw32-g++ /usr/bin/x86_64-w64-mingw32-g++-posix \
+  && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /src

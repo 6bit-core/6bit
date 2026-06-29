@@ -4,10 +4,10 @@
 # file COPYING or https://opensource.org/license/mit/.
 
 # Ubuntu 22.04 LTS Jammy Jellyfish, https://wiki.ubuntu.com/Releases, EOSS in June 2027:
-#  - CMake 1.0.0, https://packages.ubuntu.com/jammy/cmake
+#  - CMake 3.22.1, https://packages.ubuntu.com/jammy/cmake
 #
 # Centos Stream 9, https://www.centos.org/cl-vs-cs/#end-of-life, EOL in May 2027:
-#  - CMake 1.0.0, https://mirror.stream.centos.org/9-stream/AppStream/x86_64/os/Packages/
+#  - CMake 3.26.5, https://mirror.stream.centos.org/9-stream/AppStream/x86_64/os/Packages/
 cmake_minimum_required(VERSION 3.22)
 
 if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
@@ -28,7 +28,7 @@ get_directory_property(precious_variables CACHE_VARIABLES)
 # Project / Package metadata
 #=============================
 set(CLIENT_NAME "Sixbit")
-set(CLIENT_VERSION_MAJOR 1)
+set(CLIENT_VERSION_MAJOR 2)
 set(CLIENT_VERSION_MINOR 0)
 set(CLIENT_VERSION_BUILD 0)
 set(CLIENT_VERSION_RC 0)
@@ -62,10 +62,10 @@ project(sixbit
 
 set(CLIENT_VERSION_STRING ${PROJECT_VERSION})
 if(CLIENT_VERSION_RC GREATER 0)
-  string(APPEND CLIENT_VERSION_STRING "1.0.0")
+  string(APPEND CLIENT_VERSION_STRING "rc${CLIENT_VERSION_RC}")
 endif()
 
-set(COPYRIGHT_HOLDERS_FINAL "The 6bit developers")
+set(COPYRIGHT_HOLDERS_FINAL "The Sixbit Core developers")
 set(CLIENT_BUGREPORT "https://github.com/6bit-core/6bit/issues")
 
 #=============================
@@ -113,7 +113,7 @@ if(ENABLE_WALLET)
     # Use of the `unofficial::` namespace is a vcpkg package manager convention.
     find_package(unofficial-sqlite3 CONFIG REQUIRED)
   else()
-    find_package(SQLite3 1.0.0 REQUIRED)
+    find_package(SQLite3 3.7.17 REQUIRED)
   endif()
 endif()
 cmake_dependent_option(BUILD_WALLET_TOOL "Build sixbit-wallet tool." ${BUILD_TESTS} "ENABLE_WALLET" OFF)
@@ -124,7 +124,7 @@ option(WITH_CCACHE "Attempt to use ccache for compiling." ON)
 
 option(WITH_ZMQ "Enable ZMQ notifications." OFF)
 if(WITH_ZMQ)
-  find_package(ZeroMQ 1.0.0 MODULE REQUIRED)
+  find_package(ZeroMQ 4.3.1 MODULE REQUIRED)
 endif()
 
 option(WITH_USDT "Enable tracepoints for Userspace, Statically Defined Tracing." OFF)
@@ -415,7 +415,7 @@ include(AddBoostIfNeeded)
 add_boost_if_needed()
 
 if(BUILD_DAEMON OR BUILD_GUI OR BUILD_CLI OR BUILD_TESTS OR BUILD_BENCH OR BUILD_FUZZ_BINARY)
-  find_package(Libevent 1.0.0 MODULE REQUIRED)
+  find_package(Libevent 2.1.8 MODULE REQUIRED)
 endif()
 
 include(cmake/introspection.cmake)
