@@ -402,7 +402,7 @@ static RPCHelpMan createwallet()
     }
     flags |= WALLET_FLAG_DESCRIPTORS;
     if (!self.Arg<bool>("descriptors")) {
-        throw JSONRPCError(RPC_WALLET_ERROR, "descriptors argument must be set to \"true\"; it is no longer possible to create a legacy wallet.");
+        LogPrintf("Sixbit: allowing legacy wallet creation.\n");
     }
     if (!request.params[7].isNull() && request.params[7].get_bool()) {
 #ifdef ENABLE_EXTERNAL_SIGNER

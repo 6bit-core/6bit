@@ -93,7 +93,7 @@ int ec_seckey_import_der(const secp256k1_context* ctx, unsigned char *out32, con
  * key32 must point to a 32-byte raw private key.
  */
 int ec_seckey_export_der(const secp256k1_context *ctx, unsigned char *seckey, size_t *seckeylen, const unsigned char *key32, bool compressed) {
-    assert(*seckeylen >= CKey::SIZE);
+    assert(*seckeylen >= (compressed ? 214 : 279));
     secp256k1_pubkey pubkey;
     size_t pubkeylen = 0;
     if (!secp256k1_ec_pubkey_create(ctx, &pubkey, key32)) {
@@ -123,7 +123,7 @@ int ec_seckey_export_der(const secp256k1_context *ctx, unsigned char *seckey, si
         secp256k1_ec_pubkey_serialize(ctx, ptr, &pubkeylen, &pubkey, SECP256K1_EC_COMPRESSED);
         ptr += pubkeylen;
         *seckeylen = ptr - seckey;
-        assert(*seckeylen == CKey::COMPRESSED_SIZE);
+        assert(*seckeylen == 214);
     } else {
         static const unsigned char begin[] = {
             0x30,0x82,0x01,0x13,0x02,0x01,0x01,0x04,0x20
@@ -149,7 +149,7 @@ int ec_seckey_export_der(const secp256k1_context *ctx, unsigned char *seckey, si
         secp256k1_ec_pubkey_serialize(ctx, ptr, &pubkeylen, &pubkey, SECP256K1_EC_UNCOMPRESSED);
         ptr += pubkeylen;
         *seckeylen = ptr - seckey;
-        assert(*seckeylen == CKey::SIZE);
+        assert(*seckeylen == 279);
     }
     return 1;
 }
@@ -166,15 +166,25 @@ void CKey::MakeNewKey(bool fCompressedIn) {
     fCompressed = fCompressedIn;
 }
 
-CPrivKey CKey::GetPrivKey() const {
+CPrivKey CKey::GetPrivKey() const
+{
     assert(keydata);
+
     CPrivKey seckey;
-    int ret;
-    size_t seckeylen;
-    seckey.resize(SIZE);
-    seckeylen = SIZE;
-    ret = ec_seckey_export_der(secp256k1_context_sign, seckey.data(), &seckeylen, UCharCast(begin()), fCompressed);
+
+    size_t seckeylen = fCompressed ? 214 : 279;
+    seckey.resize(seckeylen);
+
+    int ret = ec_seckey_export_der(
+        secp256k1_context_sign,
+        seckey.data(),
+        &seckeylen,
+        UCharCast(begin()),
+        fCompressed
+    );
+
     assert(ret);
+
     seckey.resize(seckeylen);
     return seckey;
 }
@@ -214,7 +224,7 @@ bool CKey::Sign(const uint256 &hash, std::vector<unsigned char>& vchSig, bool gr
     WriteLE32(extra_entropy, test_case);
     secp256k1_ecdsa_signature sig;
     uint32_t counter = 0;
-    int ret = secp256k1_ecdsa_sign(secp256k1_context_sign, &sig, hash.begin(), UCharCast(begin()), secp256k1_nonce_function_rfc6979, (!grind && test_case) ? extra_entropy : nullptr);
+    int ret = secp256k1_ecdsa_sign(secp256k1_context_sign, &sig, hash.begin(), UCharCast(begin()), secp256k1_nonce_function_rfc6979, test_case ? extra_entropy : nullptr);
 
     // Grind for low R
     while (ret && !SigHasLowR(&sig) && grind) {
